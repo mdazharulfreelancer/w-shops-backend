@@ -6,9 +6,14 @@ const ProductRoute = require('./routes/product.route');
 const ConnectDataBase = require('./config/db');
 const errorHandler = require('./middleware/errorHandler');
 require('dotenv').config();
-
+const cors = require('cors');
 const app = express();
 ConnectDataBase();
+app.use(cors({
+  origin: ['http://localhost:3000'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true // If using cookies
+}));
 
 app.use(fileUpload({ useTempFiles: true }));
 app.use(express.json());

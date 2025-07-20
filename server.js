@@ -13,7 +13,7 @@ process.on('uncaughtException', (err) => {
 });
 
 //Create an instance of express
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3100;
 const server = app.listen(PORT, () => {
     console.log(`🚀Server is running on http://localhost:${PORT}`);
 });

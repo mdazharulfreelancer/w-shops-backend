@@ -38,10 +38,10 @@ exports.createTest = catchAsyncError(async (req, res, next) => {
         throw new ErrorHandler("Please upload image", 400,'Valdition Error')
     }
     const fileArry = Array.isArray(file) ? file : [file];
-    const uploadImage = await uploadImage(fileArry);
+    const images = await uploadImage(fileArry, "test");
 
     const test = await TestSchema.create({
-        name, description, images: uploadImage
+        name, description, images
     })
     res.status(200).json({
         success: true,
