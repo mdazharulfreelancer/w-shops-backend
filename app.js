@@ -10,10 +10,7 @@ const cors = require('cors');
 const app = express();
 ConnectDataBase();
 // ✅ Allow specific frontend origin (your frontend domain)
-app.use(cors({
-  origin: 'http://localhost:3000',
-  credentials: true // if you're sending cookies or auth headers
-}));
+app.use(cors());
 
 app.use(fileUpload({ useTempFiles: true }));
 app.use(express.json());
