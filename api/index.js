@@ -1,28 +1,10 @@
-// api/index.js
-const serverless = require('serverless-http');
+const express = require('express');
 const app = require('../app');
-// Must be placed after all routes
+const serverless = require('serverless-http');
 
-//uncaughtException handler
-// process.on('uncaughtException', (err) => {
-//     console.error(`Uncaught Exception: ${err.message}`);
-//     process.exit(1);
-// });
-
-//Create an instance of express
-// const PORT = process.env.PORT || 3100;
-// const server = app.listen(PORT, () => {
-//     console.log(`🚀Server is running on http://localhost:${PORT}`);
-// });
-
-//unhandledRejection handler
-// process.on('unhandledRejection', (err) => {
-//     console.error(`Unhandled Rejection: ${err.message}`);
-//     server.close(() => {
-//         process.exit(1);
-//     });
-// });
 
 
 
 module.exports = serverless(app);
+//serverless
+
