@@ -1,11 +1,9 @@
-const express = require('express');
+// api/index.js
+const serverless = require('serverless-http');
 const app = require('../app');
 const errorHandler = require('../middleware/errorHandler');
 
-
-const serverless = require('serverless-http');
-
-
+app.use(errorHandler); // Must be placed after all routes
 
 //uncaughtException handler
 // process.on('uncaughtException', (err) => {
@@ -13,7 +11,6 @@ const serverless = require('serverless-http');
 //     process.exit(1);
 // });
 
-app.use(errorHandler)
 //Create an instance of express
 // const PORT = process.env.PORT || 3100;
 // const server = app.listen(PORT, () => {
@@ -27,5 +24,7 @@ app.use(errorHandler)
 //         process.exit(1);
 //     });
 // });
-//serverless
+
+
+
 module.exports = serverless(app);
