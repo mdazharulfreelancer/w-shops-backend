@@ -12,7 +12,7 @@ ConnectDataBase();
 
 // ✅ Allow specific frontend origin (your frontend domain)
 app.use(cors({
-  origin: 'https://w-shops.vercel.app', // Allow only this origin
+  origin: ['https://w-shops.vercel.app/', 'http://localhost:3000'], // Allow only this origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
 }));
