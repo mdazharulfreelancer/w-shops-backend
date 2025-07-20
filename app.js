@@ -3,11 +3,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const ProductRoute = require('./routes/product.route');
 const ConnectDataBase = require('./config/db');
-require('dotenv').config();
 // Create an instance of express
 const app = express();
-const fileUpload = require('express-fileupload');
 
+require('dotenv').config();
+ConnectDataBase();
+
+
+const fileUpload = require('express-fileupload');
 app.use(fileUpload({useTempFiles:true}));
 // Middleware to parse JSON bodies
 app.use(express.json());
