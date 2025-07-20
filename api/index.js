@@ -1,9 +1,7 @@
 // api/index.js
 const serverless = require('serverless-http');
 const app = require('../app');
-const errorHandler = require('../middleware/errorHandler');
-
-app.use(errorHandler); // Must be placed after all routes
+// Must be placed after all routes
 
 //uncaughtException handler
 // process.on('uncaughtException', (err) => {
