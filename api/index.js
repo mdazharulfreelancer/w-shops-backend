@@ -2,7 +2,7 @@ const express = require('express');
 const app = require('../app');
 const errorHandler = require('../middleware/errorHandler');
 const ConnectDataBase = require('../config/db');
-require('dotenv').config();
+
 const serverless = require('serverless-http');
 
 
@@ -28,4 +28,4 @@ process.on('unhandledRejection', (err) => {
     });
 });
 //serverless
-module.exports.handler = serverless(app);
+module.exports = serverless(app);

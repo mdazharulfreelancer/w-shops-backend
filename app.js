@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const ProductRoute = require('./routes/product.route');
 const ConnectDataBase = require('./config/db');
-
+require('dotenv').config();
 // Create an instance of express
 const app = express();
 const fileUpload = require('express-fileupload');
