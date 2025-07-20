@@ -14,14 +14,15 @@ app.use(fileUpload({ useTempFiles: true }));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/api/v1', ProductRoute);
-app.use('/api/v1', require('./routes/category.route'));
-app.use('/api/v1', require('./routes/subCategory.route'));
-
 app.get('/', (req, res) => {
     console.log('Welcome to the W-Shop API');
   res.send('Welcome to the W-Shop API');
 });
+app.use('/api/v1', ProductRoute);
+app.use('/api/v1', require('./routes/category.route'));
+app.use('/api/v1', require('./routes/subCategory.route'));
+
+
 
 app.use(errorHandler); 
 module.exports = app;
