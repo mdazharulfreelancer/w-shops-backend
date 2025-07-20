@@ -9,9 +9,13 @@ require('dotenv').config();
 const cors = require('cors');
 const app = express();
 ConnectDataBase();
-// ✅ Allow specific frontend origin (your frontend domain)
-app.use(cors());
 
+// ✅ Allow specific frontend origin (your frontend domain)
+app.use(cors({
+  origin: 'https://w-shops.vercel.app', // Allow only this origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
+}));
 app.use(fileUpload({ useTempFiles: true }));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));

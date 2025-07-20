@@ -6,6 +6,7 @@ module.exports = (maxImage, allowdTypes = ['image/jpeg', 'image/png']) => {
     return async(req, res, next) => {
           const files = req.files?.images;
       const images = Array.isArray(files) ? files : [files];
+      console.log(images)
         if(!images) {
             await Promise.all(images.map(async (image) => await fs.unlink(image.tempFilePath)));
             throw new ValidationError("Please upload at least one image");
