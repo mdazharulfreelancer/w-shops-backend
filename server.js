@@ -14,11 +14,11 @@ process.on('uncaughtException', (err) => {
 });
 
 app.use(errorHandler)
-// Create an instance of express
-// const PORT = process.env.PORT || 3100;
-// const server = app.listen(PORT, () => {
-//     console.log(`🚀Server is running on http://localhost:${PORT}`);
-// });
+//Create an instance of express
+const PORT = process.env.PORT || 3100;
+const server = app.listen(PORT, () => {
+    console.log(`🚀Server is running on http://localhost:${PORT}`);
+});
 
 //unhandledRejection handler
 process.on('unhandledRejection', (err) => {
@@ -28,5 +28,4 @@ process.on('unhandledRejection', (err) => {
     });
 });
 //serverless
-module.exports.handler = serverless(app);
 
