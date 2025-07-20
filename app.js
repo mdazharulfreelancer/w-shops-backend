@@ -9,10 +9,10 @@ require('dotenv').config();
 const cors = require('cors');
 const app = express();
 ConnectDataBase();
+// ✅ Allow specific frontend origin (your frontend domain)
 app.use(cors({
-  origin: ['http://localhost:3000'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true // If using cookies
+  origin: 'http://localhost:3000',
+  credentials: true // if you're sending cookies or auth headers
 }));
 
 app.use(fileUpload({ useTempFiles: true }));
