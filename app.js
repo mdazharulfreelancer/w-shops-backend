@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
 const ProductRoute = require('./routes/product.route');
 const ConnectDataBase = require('./config/db');
-const errorHandler = require('../middleware/errorHandler');
+const errorHandler = require('./middleware/errorHandler');
 require('dotenv').config();
 
 const app = express();
